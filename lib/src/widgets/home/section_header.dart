@@ -22,6 +22,10 @@ class SectionHeader extends StatelessWidget {
           visible: iconPath != null,
           child: Image.asset(iconPath ?? '', height: 22),
         ),
+        Visibility(
+          visible: iconPath != null,
+          child: const SizedBox(width: 4),
+        ),
         Text(
           sectionName,
           style: AppFonts.montserratBold(18),

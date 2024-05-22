@@ -12,3 +12,4 @@ export 'src/widgets/home/match_summary/match_summary_card.dart';
 export 'src/widgets/home/section_header.dart';
 export 'src/widgets/home/text_button_row.dart';
 export 'src/widgets/home/tip_card.dart';
+export 'src/widgets/home/won_bet_card.dart';
