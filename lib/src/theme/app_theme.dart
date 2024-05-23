@@ -24,5 +24,22 @@ class AppTheme {
         minimumSize: const Size.fromHeight(56),
       ),
     ),
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: AppColors.white,
+      focusColor: AppColors.white,
+      border: OutlineInputBorder(
+        borderSide: const BorderSide(color: AppColors.lightGrey),
+        borderRadius: BorderRadius.circular(48),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: AppColors.lightGrey),
+        borderRadius: BorderRadius.circular(48),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: const BorderSide(color: AppColors.lightGrey),
+        borderRadius: BorderRadius.circular(48),
+      ),
+    ),
   );
 }
