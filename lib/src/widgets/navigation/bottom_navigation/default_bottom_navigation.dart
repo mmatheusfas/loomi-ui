@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loomi_ui/src/widgets/home/user_avatar_viewer.dart';
+import 'package:loomi_ui/src/widgets/navigation/bottom_navigation/bottom_navigation_item.dart';
 
 import '../../../theme/app_colors.dart';
 
@@ -7,19 +8,21 @@ class DefaultBottomNavigation extends StatelessWidget {
   const DefaultBottomNavigation({
     super.key,
     required this.appLogoPath,
-    this.onTapMenu,
     required this.firstBottomIconPath,
     required this.secondBottomIconPath,
     required this.thirdBottomIconPath,
     required this.userAvatarPath,
+    required this.items,
+    this.onTapMenu,
   });
 
   final String appLogoPath;
-  final VoidCallback? onTapMenu;
   final String firstBottomIconPath;
   final String secondBottomIconPath;
   final String thirdBottomIconPath;
   final String userAvatarPath;
+  final List<BottomNavigationItem> items;
+  final VoidCallback? onTapMenu;
 
   @override
   Widget build(BuildContext context) {
@@ -57,19 +60,7 @@ class DefaultBottomNavigation extends StatelessWidget {
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Container(
-                      height: 48,
-                      width: 68,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(80),
-                        color: AppColors.yellow,
-                      ),
-                      child: Image.asset(firstBottomIconPath),
-                    ),
-                    InkWell(child: Image.asset(secondBottomIconPath, color: Colors.white)),
-                    InkWell(child: Image.asset(thirdBottomIconPath, color: Colors.white))
-                  ],
+                  children: items,
                 ),
               ),
               UserAvatarViewer(userAvatarPath: userAvatarPath, hasBorder: true),
