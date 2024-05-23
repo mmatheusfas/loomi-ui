@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loomi_ui/src/widgets/home/user_avatar_viewer.dart';
 
 import '../../theme/app_colors.dart';
 import '../../theme/app_fonts.dart';
@@ -31,17 +32,7 @@ class WonBetCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Container(
-            height: 40,
-            width: 40,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: NetworkImage(userAvatarPath),
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
+          UserAvatarViewer(userAvatarPath: userAvatarPath),
           const SizedBox(width: 12),
           Text(userName, style: AppFonts.montserratMedium(14)),
           const SizedBox(width: 12),
